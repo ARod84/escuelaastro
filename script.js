@@ -73,8 +73,8 @@ btn.addEventListener("click", function() {
 
     if (luna.validacion === "Luna") {
         let datos = "";
-        for (const dato of datosLuna) {
-            datos += `<p>${dato}</p>`
+        for (const [key, value] of datosLuna) {
+            datos += `<p>${key}: ${value}</p>`
         }
         datos1.innerHTML = datos;
         ftw.innerHTML = "<img src='./img/luna.jpg' alt='Luna' class='imagen' width='500' height='500' /><p class='msj'>¡Tu luna se ve bien! Listo para el siguiente nivel.</p>";
