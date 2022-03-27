@@ -50,6 +50,14 @@ body {
     background-color: #16213B;
     font-size: 16px;
 }
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
 
 h1, h2, h3, 
 h4, h5, h6 {
@@ -58,11 +66,58 @@ h4, h5, h6 {
     font-size: 2.5rem;
 }
 
+p {
+	font-family: 'Press Start 2P', sans-serif;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.msj {
+	margin: 2rem auto;
+	max-width: 50%;
+	line-height: 1.5em;
+	text-align: center;
+}
+
+.btn {
+	background: transparent;
+	font-family: 'Press Start 2P', sans-serif;
+	border: 1px solid #ffffff;
+	padding: 16px 32px 16px 32px;
+	border-radius: 8px;
+	color: #ffffff;
+	cursor: pointer;
+	text-decoration: none;
+}
+
 .container {
-    display: grid;
+	display: block;
+	margin: 0 auto;
+}
+
+.slide {
+	display: grid;
     grid-template-columns: 100%;
     grid-template-rows: .5fr .5fr;
     justify-items: center;
     align-items: center;
-    min-height: 80vh;
+	min-height: 80vh;
+}
+
+#lvl2,
+#reloadLuna {
+	display: none;
+}
+
+.imagen {
+  width: 500px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%;
+}
+
+#slideMarte,
+#slideSol {
+	display: none;
 }
