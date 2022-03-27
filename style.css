@@ -79,6 +79,20 @@ p {
 	text-align: center;
 }
 
+.datos p {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #ffffff;
+    font-size: 1.1rem;
+	line-height: 1.2em;
+	text-transform: capitalize;
+}
+
+.datos {
+	padding: 1.75rem;
+    text-align: left;
+	border-radius: 10px;
+}
+
 .btn {
 	background: transparent;
 	font-family: 'Press Start 2P', sans-serif;

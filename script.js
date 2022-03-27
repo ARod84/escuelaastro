@@ -7,6 +7,7 @@
 let btn = document.getElementById("create");
 let ftw = document.getElementById("ftw");
 let btnNext = document.getElementById("lvl2");
+let datos1 = document.getElementById("datosLuna");
 let reload1 = document.getElementById("reloadLuna");
 let slide1 = document.getElementById("slideLuna");
 let slide2 = document.getElementById("slideMarte");
@@ -61,12 +62,25 @@ class Luna extends Planeta {
 let luna = new Luna(lunaVolumen, lunaDistancia, lunaGravedad, lunaPlaneta.toLowerCase());
 
 
+
+
+
+//devuelve array con datos de la Luna
+let datosLuna = Object.entries(luna);
+
+
 btn.addEventListener("click", function() {
 
     if (luna.validacion === "Luna") {
+        let datos = "";
+        for (const dato of datosLuna) {
+            datos += `<p>${dato}</p>`
+        }
+        datos1.innerHTML = datos;
         ftw.innerHTML = "<img src='./img/luna.jpg' alt='Luna' class='imagen' width='500' height='500' /><p class='msj'>¡Tu luna se ve bien! Listo para el siguiente nivel.</p>";
         btnNext.style.display = "block";
         btn.style.display = "none";
+        
     } else {
         ftw.innerHTML = "<img src='./img/exp-luna.jpg' alt='Luna explota' class='imagen' width='500' height='500' /><p class='msj'>Tu luna explotó :( ¡Intenta de nuevo!</p>";
         reload1.style.display = "block";
@@ -77,48 +91,5 @@ btn.addEventListener("click", function() {
 function marteLvl() {
     slide1.style.display = "none";
     slide2.style.display = "block";
-    let marteVolumen = prompt("El volumen de Marte es 1/6 del de la Tierra. ¿Cuántos Martes caben en la Tierra");
-    let marteDistancia = prompt("¿Cuán lejos crees que esta la Marte de la Tierra?");
-    let marteGravedad = prompt("¿Cuánto vale la gravedad en la superficie de la Marte?");
+    alert("SIGUIENTE NIVEL PRÓXIMAMENTE.");
 }
-
-
-let marte = new Planeta(marteVolumen, marteDistancia, marteGravedad);
-
-
-btn.addEventListener("click", function() {
-    console.log(marte)
-    /*if (luna.validacion === "Luna") {
-        ftw.innerHTML = "<img src='./img/luna.jpg' alt='Luna' class='imagen' width='500' height='500' /><p class='msj'>¡Tu luna se ve bien! Listo para el siguiente nivel.</p>";
-        btnNext.style.display = "block";
-        btn.style.display = "none";
-    } else {
-        ftw.innerHTML = "<img src='./img/exp-luna.jpg' alt='Luna explota' class='imagen' width='500' height='500' /><p class='msj'>Tu luna explotó :( ¡Intenta de nuevo!</p>";
-        reload1.style.display = "block";
-        btn.style.display = "none";
-    }*/
-})
-
-/* let solVolumen = prompt("¿Cuál es el tamaño (volumen) de la Sol?");
-let solDistancia = prompt("¿Cuán lejos crees que esta la Sol de la Tierra?");
-let solGravedad = prompt("¿Cuánto vale la gravedad en la superficie del Sol?");
-
-class Estrella extends Planeta {
-    constructor (volumen, distancia, gravedad, temperatura, nucleo, tipo) {
-        super(volumen,distancia,gravedad);
-        this.temperatura = temperatura;
-        this.nucleo = nucleo;
-        this.tipo = tipo;
-    }
-
-    validacion() {
-        if (this.volumen < 5000 && this.distancia < 6000 && this.gravedad < 7000 && this.tipo === "enana amarilla") {
-            return true;
-        } else {
-            return false;
-        }
-    }
-}
-
-let sol = new Estrella();
-console.log (sol)*/
