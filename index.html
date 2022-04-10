@@ -32,28 +32,25 @@
         <div id="slideLuna" class="slide">
             <h1>LVL 1: Luna</h1>
             <div class="luna" id="luna">
-                <div class="crater"></div>
-                <div class="crater"></div>
-                <div class="crater"></div>
             </div>
             <!------- Controls lvl1 ------->
             <div class="controls">
                 <div class="control">
                     <div id="displayVol" class="display"></div>
                     <label for="volumen">Volumen</label>
-                    <input type="range" name="volumen" class="volumen" />
+                    <input type="range" name="volumen" id="volumen" class="volumen" min="0" max="60" step="10" />
                 </div>
                 <div class="control">
                     <div id="displayDist" class="display"></div>
                     <label for="distancia">Distancia</label>
-                    <input type="range" name="distancia" class="distancia" />
+                    <input type="range" name="distancia" id="distancia" class="distancia" min="0" max="400000" step="5000" />
                 </div>
                 <div class="control">
                     <div id="displayGrav" class="display"></div>
                     <label>gravedad</label>
                     <div class="buttons">
-                        <button>+</button>
-                        <button>-</button>
+                        <button id="plus">+</button>
+                        <button id="minus">-</button>
                     </div>
                 </div>
             </div>

@@ -267,19 +267,29 @@ p {
   margin-bottom: 1.5rem;
 }
 
+.display {
+  height: 3rem;
+}
+
 .buttons {
   text-align: center;
 }
 
 .buttons button {
   background-color: #131D33;
-  border-radius: 4px;
-  padding: 1rem 1.45rem 1rem 1.45rem;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
   color: #ffffff;
-  border: 1px solid #D5CEED;
+  border: 2px solid #D5CEED;
   font-size: 2rem;
   font-weight: 600;
   cursor: pointer;
+  vertical-align: middle;
+}
+
+.buttons button:hover {
+  background-color: #D5CEED;
 }
 
 input[type=range] {
@@ -298,7 +308,7 @@ input[type=range]::-webkit-slider-runnable-track {
   cursor: pointer;
   -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
           box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #D5CEED;
+  background: #131D33;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
@@ -317,7 +327,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #367ebd;
+  background: #D5CEED;
 }
 
 input[type=range]::-moz-range-track {
@@ -325,7 +335,7 @@ input[type=range]::-moz-range-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #D5CEED;
+  background: #131D33;
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
@@ -358,7 +368,7 @@ input[type=range]::-ms-fill-lower {
 }
 
 input[type=range]::-ms-fill-upper {
-  background: #D5CEED;
+  background: #131D33;
   border: 0.2px solid #010101;
   border-radius: 2.6px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;

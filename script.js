@@ -20,6 +20,11 @@ let slide1 = document.getElementById("slideLuna");
 let slide2 = document.getElementById("slideMarte");
 let slide3 = document.getElementById("slideSol");
 
+/* Controles */
+let vol = document.getElementById("displayVol");
+let dist = document.getElementById("displayDist");
+let grav = document.getElementById("displayGrav");
+
 //Variables jugador 
 
 //datos jugador
@@ -53,6 +58,8 @@ inputForm.addEventListener("submit", (e) => {
     e.preventDefault();
 });
 
+
+// Inicia el nivel 1
 start.addEventListener("click", () => {
     slideIntro.style.display = "none";
     slide1.style.display = "grid";
@@ -78,6 +85,10 @@ class Planeta {
     }
 }
 
+/*****************************
+ *----------NIVEL 1----------*
+ *****************************/
+
 class Luna extends Planeta {
     constructor(volumen, distancia, gravedad, planeta) {
         super(volumen,distancia,gravedad);
@@ -100,6 +111,28 @@ let luna = new Luna(lunaVolumen, lunaDistancia, lunaGravedad);
 
 //devuelve array con datos de la Luna
 let datosLuna = Object.entries(luna);
+
+// Controles Nivel 1 
+// Display cantidades
+
+volumen.addEventListener("input", (e) => {
+    vol.innerHTML = "<p>" + e.target.value + "</p>";
+});
+
+distancia.addEventListener("input", (e) => {
+    dist.innerHTML = "<p>" + e.target.value + "</p>";
+});
+
+let gravedad = 0;
+plus.addEventListener("click", () => {
+    gravedad += 1;
+    grav.innerHTML = "<p>" + gravedad + "</p>";
+});
+
+minus.addEventListener("click", () => {
+    gravedad -= 1;
+    grav.innerHTML = "<p>" + gravedad + "</p>";
+});
 
 btn.addEventListener("click", function() {
 

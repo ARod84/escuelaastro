@@ -248,19 +248,28 @@ p {
 	margin-bottom: 1.5rem;
 }
 
+.display {
+    height: 3rem;
+}
+
 .buttons {
 	text-align: center;
 }
 
 .buttons button {
 	background-color: $darts;
-    border-radius: 4px;
-	padding: 1rem 1.45rem 1rem 1.45rem;
+    border-radius: 50%;
+	width: 3.5rem;
+	height: 3.5rem;
 	color: #ffffff;
-	border: 1px solid $actionHover;
+	border: 2px solid $actionHover;
 	font-size: 2rem;
 	font-weight: 600;
 	cursor: pointer;
+	vertical-align: middle;
+	&:hover {
+		background-color: $actionHover;
+	}
 }
 
 input[type=range] {
@@ -276,7 +285,7 @@ input[type=range] {
 	height: 8.4px;
 	cursor: pointer;
 	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-	background: $actionHover;
+	background: $darts;
 	border-radius: 1.3px;
 	border: 0.2px solid #010101;
   }
@@ -292,14 +301,14 @@ input[type=range] {
 	margin-top: -10px;
   }
   input[type=range]:focus::-webkit-slider-runnable-track {
-	background: #367ebd;
+	background: $actionHover;
   }
   input[type=range]::-moz-range-track {
 	width: 400px;
 	height: 8.4px;
 	cursor: pointer;
 	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-	background: $actionHover;
+	background: $darts;
 	border-radius: 1.3px;
 	border: 0.2px solid #010101;
   }
@@ -328,7 +337,7 @@ input[type=range] {
 	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
   input[type=range]::-ms-fill-upper {
-	background: $actionHover;
+	background: $darts;
 	border: 0.2px solid #010101;
 	border-radius: 2.6px;
 	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
