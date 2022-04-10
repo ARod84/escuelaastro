@@ -117,10 +117,16 @@ let datosLuna = Object.entries(luna);
 
 volumen.addEventListener("input", (e) => {
     vol.innerHTML = "<p>" + e.target.value + "</p>";
+    document.getElementById("luna").style.width = e.target.value + "0px";
+    document.getElementById("luna").style.height = e.target.value + "0px";
 });
 
 distancia.addEventListener("input", (e) => {
+    let d = e.target.value;
+    let dt = d.replace('000', '');
+
     dist.innerHTML = "<p>" + e.target.value + "</p>";
+    document.getElementById("luna").style.left = dt + "px";
 });
 
 let gravedad = 0;
@@ -134,40 +140,3 @@ minus.addEventListener("click", () => {
     grav.innerHTML = "<p>" + gravedad + "</p>";
 });
 
-btn.addEventListener("click", function() {
-
-    if (luna.validacion === 4) {
-        let datos = "";
-        let estadoJuego = "";
-        
-        // Actualiza estado del juego
-        datosJugador = ["Nombre: " + nombre, "Puntaje: " + 4, "Nivel: " + 1];
-
-        for (const [key, value] of datosLuna) {
-            datos += `<p>${key}: ${value}</p>`
-        }
-
-        datos1.innerHTML = datos;
-
-        // retorna el estado del juego
-        for (const item of datosJugador) {
-            estadoJuego += `<p>${item}</p>`
-        }
-
-        estado1.innerHTML = estadoJuego;
-        ftw.innerHTML = "<img src='./img/luna.jpg' alt='Luna' class='imagen' width='500' height='500' /><p class='msj'>¡Tu luna se ve bien! Listo para el siguiente nivel.</p>";
-        btnNext.style.display = "block";
-        btn.style.display = "none";
-        
-    } else {
-        ftw.innerHTML = "<img src='./img/exp-luna.jpg' alt='Luna explota' class='imagen' width='500' height='500' /><p class='msj'>Tu luna explotó :( ¡Intenta de nuevo!</p>";
-        reload1.style.display = "block";
-        btn.style.display = "none";
-    }
-})
-
-function marteLvl() {
-    slide1.style.display = "none";
-    slide2.style.display = "block";
-    alert("SIGUIENTE NIVEL PRÓXIMAMENTE.");
-}

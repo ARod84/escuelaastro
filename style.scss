@@ -131,7 +131,7 @@ p {
 .slide {
 	display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 10vh 60vh 20vh;
+    grid-template-rows: 5vh 70vh 15vh;
     justify-items: center;
     align-items: center;
 	height: 90vh;
@@ -222,7 +222,7 @@ p {
 
 /*----------------------------------- CONTROLES ------------------------------------------*/
 .controls {
-	margin: 2.5rem auto;
+	margin: .5rem auto;
 	background-color: $controls;
 	border: 1px solid $borderControls;
 	border-radius: 1.25rem;
@@ -359,19 +359,10 @@ input[type=range] {
   }
 /* ---------------------------------- ASTROS STYLES --------------------------------------*/
 .luna {
-	width: 350px;
-	height: 350px;
 	border-radius: 50%;
 	background-color: $luna;
 	position: relative;
-}
-
-.crater {
-	width: 15px;
-	height: 15px;
-	background-color: $crater;
-	border-radius: 50%;
-	position: absolute;
-	top: 25%;
-	left: 30%;
+	width: 10px;
+	height: 10px;
+	left: 0px;
 }
