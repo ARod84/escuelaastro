@@ -34,11 +34,10 @@ let bienvenida = document.getElementById("bienvenida");
 
 
 // Variables globales
-/*let nombre = prompt("Bienvenido a la Escuela de Astronautas. ¿Cuál es tu nombre?");
-let lunaVolumen = prompt("El volumen de la Luna es 1/50 el volumen de la tierra. ¿Cuantas lunas caben en la tierra?");
-let lunaDistancia = prompt("¿Cuán lejos crees que esta la Luna de la Tierra? 365000 km o tal vez sólo 100 km (Ingresa los números sin unidades, puntos, ni comas)");
-let lunaGravedad = prompt("¿Cuánto vale la gravedad en la superficie de la Luna? ¿1.624 o igual que en la Tierra, 9.81?");
-let lunaPlaneta = prompt("¿Alrededor de cuál planeta orbita la Luna?");*/
+
+let lunaVolumen = 0;
+let lunaDistancia = 0;
+let lunaGravedad = 0;
 
 //Guarda nombre y puntaje en session storage
 // Imprime el nombre en pantalla 
@@ -86,7 +85,7 @@ class Luna extends Planeta {
     }
 
     get validacion() {
-        if (this.volumen == 50 && this.distancia == 365000 && this.gravedad == 1.624 && this.planeta === "tierra") {
+        if (this.volumen == 50 && this.distancia == 365000 && this.gravedad == 1.624) {
             return puntaje += 4;
         } else {
             return puntaje -= 1;
@@ -96,7 +95,7 @@ class Luna extends Planeta {
 
 
 
-/*let luna = new Luna(lunaVolumen, lunaDistancia, lunaGravedad, lunaPlaneta.toLowerCase());
+let luna = new Luna(lunaVolumen, lunaDistancia, lunaGravedad);
 
 
 //devuelve array con datos de la Luna
@@ -139,4 +138,3 @@ function marteLvl() {
     slide2.style.display = "block";
     alert("SIGUIENTE NIVEL PRÓXIMAMENTE.");
 }
-*/
