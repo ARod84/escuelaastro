@@ -3,29 +3,61 @@
 *---@game: Escuela de Astronautas---*
 *-----------------------------------*
 *************************************/
+
 // Variables interfaz
 let btn = document.getElementById("create");
+let start = document.getElementById("start");
+let form = document.getElementById("jugador");
 let ftw = document.getElementById("ftw");
 let btnNext = document.getElementById("lvl2");
 let datos1 = document.getElementById("datosLuna");
 let estado1 = document.getElementById("estado1");
 let reload1 = document.getElementById("reloadLuna");
+
+/* Escenas */
+let slideIntro = document.getElementById("slideIntro");
 let slide1 = document.getElementById("slideLuna");
 let slide2 = document.getElementById("slideMarte");
 let slide3 = document.getElementById("slideSol");
 
-// Variables globales
-let nombre = prompt("Bienvenido a la Escuela de Astronautas. ¿Cuál es tu nombre?");
-let lunaVolumen = prompt("El volumen de la Luna es 1/50 el volumen de la tierra. ¿Cuantas lunas caben en la tierra?");
-let lunaDistancia = prompt("¿Cuán lejos crees que esta la Luna de la Tierra? 365000 km o tal vez sólo 100 km (Ingresa los números sin unidades, puntos, ni comas)");
-let lunaGravedad = prompt("¿Cuánto vale la gravedad en la superficie de la Luna? ¿1.624 o igual que en la Tierra, 9.81?");
-let lunaPlaneta = prompt("¿Alrededor de cuál planeta orbita la Luna?");
+//Variables jugador 
 
 //datos jugador
 let puntaje = 0;
-let nivel = null;
-// Array con los datos del jugador y estado del juego
-let datosJugador =[];
+let nivel = 0;
+let trofeos = 0;
+
+// variables jugador interfaz
+let inputForm = document.getElementById("jugador");
+let inputNombre = document.getElementById("name");
+let bienvenida = document.getElementById("bienvenida");
+
+
+// Variables globales
+/*let nombre = prompt("Bienvenido a la Escuela de Astronautas. ¿Cuál es tu nombre?");
+let lunaVolumen = prompt("El volumen de la Luna es 1/50 el volumen de la tierra. ¿Cuantas lunas caben en la tierra?");
+let lunaDistancia = prompt("¿Cuán lejos crees que esta la Luna de la Tierra? 365000 km o tal vez sólo 100 km (Ingresa los números sin unidades, puntos, ni comas)");
+let lunaGravedad = prompt("¿Cuánto vale la gravedad en la superficie de la Luna? ¿1.624 o igual que en la Tierra, 9.81?");
+let lunaPlaneta = prompt("¿Alrededor de cuál planeta orbita la Luna?");*/
+
+//Guarda nombre y puntaje en session storage
+// Imprime el nombre en pantalla 
+inputForm.addEventListener("submit", (e) => {
+    // Objeto con los datos del jugador y estado del juego
+    const datosJugador = { nombre: inputNombre.value, puntaje: puntaje, nivel: nivel, trofeos: trofeos };
+    const jugador = JSON.stringify(datosJugador);
+
+    sessionStorage.setItem("Jugador", jugador);
+    bienvenida.innerHTML = "<p>Te damos la bienvenida a las Escuela de Astronautas, " + inputNombre.value + "</p>";
+    start.style.display = "block";
+    form.style.display = "none";
+    e.preventDefault();
+});
+
+start.addEventListener("click", () => {
+    slideIntro.style.display = "none";
+    slide1.style.display = "grid";
+});
 
 // Clases objetos principales
 
@@ -64,7 +96,7 @@ class Luna extends Planeta {
 
 
 
-let luna = new Luna(lunaVolumen, lunaDistancia, lunaGravedad, lunaPlaneta.toLowerCase());
+/*let luna = new Luna(lunaVolumen, lunaDistancia, lunaGravedad, lunaPlaneta.toLowerCase());
 
 
 //devuelve array con datos de la Luna
@@ -107,3 +139,4 @@ function marteLvl() {
     slide2.style.display = "block";
     alert("SIGUIENTE NIVEL PRÓXIMAMENTE.");
 }
+*/

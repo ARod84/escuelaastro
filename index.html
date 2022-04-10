@@ -8,12 +8,55 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./estilos/style.css" />
 </head>
 <body>
     <div class="container">
-        <div id="slideLuna" class="slide">
+        <!-------------------------------->
+        <!------------- INTRO ------------>
+        <!-------------------------------->
+        <div id="slideIntro" class="slide">
             <h1 class="title">Escuela de Astronautas</h1>
+            <form method="post" name="jugador" id="jugador" class="introForm">
+                <label>Nombre del jugador</label>
+                <input type="text" id="name" name="name" autocomplete="off" required />
+                <input type="submit" value="Guardar" class="btnClassy" />
+            </form>
+            <div id="bienvenida" class="textContainer"></div>
+            <button class="btnAction" id="start">¿Comenzamos?</button>
+        </div>
+        <!-------------------------------->
+        <!------------- LUNA ------------->
+        <!------------- lvl 1 ------------>
+        <!-------------------------------->
+        <div id="slideLuna" class="slide">
+            <div class="luna" id="luna">
+                <div class="crater"></div>
+                <div class="crater"></div>
+                <div class="crater"></div>
+            </div>
+            <!------- Controls lvl1 ------->
+            <div class="controls">
+                <div class="control">
+                    <div id="displayVol" class="display"></div>
+                    <label for="volumen">Volumen</label>
+                    <input type="range" name="volumen" class="volumen" />
+                </div>
+                <div class="control">
+                    <div id="displayDist" class="display"></div>
+                    <label for="distancia">Distancia</label>
+                    <input type="range" name="distancia" class="distancia" />
+                </div>
+                <div class="control">
+                    <div id="displayGrav" class="display"></div>
+                    <label>gravedad</label>
+                    <div class="buttons">
+                        <button>+</button>
+                        <button>-</button>
+                    </div>
+                </div>
+            </div>
+            <!------- Fin controls lvl1 ------->
             <div id="ftw"></div>
             <div id="datosLuna" class="datos"></div>
             <div id="estado1" class="datos"></div>
@@ -21,6 +64,10 @@
             <button id="lvl2" class="btn" onclick="marteLvl()">LVL UP</button>
             <button id="reloadLuna" onclick="location.reload()" class="btn">Jugar otra vez</button>
         </div>
+        <!-------------------------------->
+        <!------------- MARTE ------------>
+        <!------------- lvl 2 ------------>
+        <!-------------------------------->
         <div id="slideMarte" class="slide">
             <h1 class="title">Escuela de Astronautas</h1>
             <div id="ftw2"></div>
@@ -38,4 +85,5 @@
     </div>
 </body>
 <script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="jugador.js"></script>
 </html>

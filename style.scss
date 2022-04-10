@@ -1,0 +1,282 @@
+
+/*----------------------------------- @game: ESCUELA DE ASTRONAUTAS ------------------------------------------*/
+
+/*Variables */
+
+/*--------- Botones --------*/
+$classy: #324C87;
+$classyHover: #4E76D4;
+$darts: #131D33;
+$action: #847CA1;
+$actionHover: #D5CEED;
+
+/*--------- Controls -------*/
+$controls: #474B54;
+$borderControls: #A18C87;
+/*--------- Astros ---------*/
+
+/* Luna */
+$luna: #DFE3ED;
+$crater: rgba(112, 114, 119, 0.5);
+
+/*Reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ESTILOS GLOBALES */
+body {
+    background-color: #16213B;
+    font-size: 16px;
+}
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+h1, h2, h3, 
+h4, h5, h6 {
+    font-family: 'Dela Gothic One', sans-serif;
+    color: #ffffff;
+    font-size: 2.5rem;
+}
+
+p {
+	font-family: 'Press Start 2P', sans-serif;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.msj {
+	margin: 2rem auto;
+	max-width: 50%;
+	line-height: 1.5em;
+	text-align: center;
+}
+
+.datos p {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #ffffff;
+    font-size: 1.1rem;
+	line-height: 1.2em;
+	text-transform: capitalize;
+}
+
+.datos {
+	padding: 1.75rem;
+    text-align: left;
+	border-radius: 10px;
+}
+
+.btn {
+	background: transparent;
+	font-family: 'Press Start 2P', sans-serif;
+	border: 1px solid #ffffff;
+	padding: 16px 32px 16px 32px;
+	border-radius: 8px;
+	color: #ffffff;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.container {
+	display: block;
+	margin: 0 auto;
+}
+
+.slide {
+	display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+    align-items: center;
+	min-height: 80vh;
+}
+
+#lvl2,
+#start,
+#reloadLuna {
+	display: none;
+}
+
+.imagen {
+  width: 500px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%;
+}
+
+#slideLuna,
+#slideMarte,
+#slideSol {
+	display: none;
+}
+
+/* Slide Intro */
+
+.introForm input[type="text"] {
+	background-color: $darts;
+	padding: 16px 32px 16px 32px;
+	border: 2px solid #324C87;
+	border-radius: .66rem;
+	margin-bottom: 1rem;
+	color: #ffffff;
+	font-size: .85rem;
+	font-family: 'Press Start 2P', sans-serif;
+}
+
+.introForm label {
+	font-size: 1.45rem;
+	font-family: 'Press Start 2P', sans-serif;
+	margin-bottom: 1rem;
+	color: #ffffff;
+}
+
+.introForm {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-between;
+}
+
+.btnClassy {
+	background-color: $classy;
+	padding: 16px 32px 16px 32px;
+	border: 2px solid #324C87;
+	border-radius: .66rem;
+	margin-bottom: 1rem;
+	color: #ffffff;
+	font-size: 1.25rem;
+	font-family: 'Press Start 2P', sans-serif;
+	cursor: pointer;
+
+    &:hover {
+        border: 2px solid $classyHover;
+    }
+}
+
+.btnAction {
+	background-color: $action;
+	padding: 16px 32px 16px 32px;
+	border: 2px solid #324C87;
+	border-radius: .66rem;
+	margin-bottom: 1rem;
+	color: #ffffff;
+	font-size: 1.25rem;
+	font-family: 'Press Start 2P', sans-serif;
+	cursor: pointer;
+
+    &:hover {
+        border: 2px solid $actionHover;
+    }
+}
+
+.textContainer {
+    margin-bottom: 2rem;
+}
+
+/*----------------------------------- CONTROLES ------------------------------------------*/
+.controls {
+	margin: 2.5rem auto;
+	background-color: $controls;
+	border: 1px solid $borderControls;
+	border-radius: 1.25rem;
+	width: 80%;
+    display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1.75rem;
+}
+
+.control {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.control label {
+    color: #ffffff;
+	font-family: 'Dela Gothic One', sans-serif;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	margin-bottom: 1.5rem;
+}
+
+.buttons {
+	text-align: center;
+}
+
+.buttons button {
+	background-color: $darts;
+    border-radius: 4px;
+	padding: 1rem 1.45rem 1rem 1.45rem;
+	color: #ffffff;
+	border: 1px solid $actionHover;
+	font-size: 2rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+/* ---------------------------------- ASTROS STYLES --------------------------------------*/
+.luna {
+	width: 350px;
+	height: 350px;
+	border-radius: 50%;
+	background-color: $luna;
+	position: relative;
+}
+
+.crater {
+	width: 15px;
+	height: 15px;
+	background-color: $crater;
+	border-radius: 50%;
+	position: absolute;
+	top: 25%;
+	left: 30%;
+}
