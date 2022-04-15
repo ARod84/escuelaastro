@@ -39,7 +39,6 @@ let bienvenida = document.getElementById("bienvenida");
 
 
 // Variables globales
-
 let lunaVolumen = 0;
 let lunaDistancia = 0;
 let lunaGravedad = 0;
@@ -105,21 +104,19 @@ class Luna extends Planeta {
 }
 
 
-
-let luna = new Luna(lunaVolumen, lunaDistancia, lunaGravedad);
-
-
-//devuelve array con datos de la Luna
-let datosLuna = Object.entries(luna);
-
 // Controles Nivel 1 
 // Display cantidades
+
+function volLun() {
+    return volumen.value;
+}
 
 volumen.addEventListener("input", (e) => {
     vol.innerHTML = "<p>" + e.target.value + "</p>";
     document.getElementById("luna").style.width = e.target.value + "0px";
     document.getElementById("luna").style.height = e.target.value + "0px";
-});
+}) 
+
 
 distancia.addEventListener("input", (e) => {
     let d = e.target.value;
@@ -140,3 +137,12 @@ minus.addEventListener("click", () => {
     grav.innerHTML = "<p>" + gravedad + "</p>";
 });
 
+    
+const luna = new Luna(volLun(), lunaDistancia, lunaGravedad);
+
+//devuelve array con datos de la Luna
+let datosLuna = Object.entries(luna);
+
+btn.addEventListener("click", () => {
+    console.log(datosLuna)
+})

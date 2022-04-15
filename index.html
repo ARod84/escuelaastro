@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./estilos/style.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="container">
@@ -38,7 +38,7 @@
                 <div class="control">
                     <div id="displayVol" class="display"></div>
                     <label for="volumen">Volumen</label>
-                    <input type="range" name="volumen" id="volumen" class="volumen" min="0" max="50" step="10" />
+                    <input type="range" onchange="volLun()" name="volumen" id="volumen" class="volumen" min="0" max="50" step="10" />
                 </div>
                 <div class="control">
                     <div id="displayDist" class="display"></div>
@@ -55,11 +55,11 @@
                 </div>
             </div>
             <!------- Fin controls lvl1 ------->
-            <!--div id="ftw"></!--div>
+            <!--div id="ftw"></!--div-->
             <div id="datosLuna" class="datos"></div>
-            <div id="estado1" class="datos"></div>
+            <!--div id="estado1" class="datos"></!--div-->
             <button id="create" class="btn">Ver Luna</button>
-            <button id="lvl2" class="btn" onclick="marteLvl()">LVL UP</button>
+            <!--button id="lvl2" class="btn" onclick="marteLvl()">LVL UP</!--button>
             <button-- id="reloadLuna" onclick="location.reload()" class="btn">Jugar otra vez</button-->
         </div>
         <!-------------------------------->
